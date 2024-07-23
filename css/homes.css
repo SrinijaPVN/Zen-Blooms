@@ -1,0 +1,126 @@
+/* 
+.container{
+    display:inline-block;
+  }
+  nav{
+    list-style-type: none;
+    display:flex;
+    justify-content:space-between;
+    background-color: pink;
+    
+    margin: 0;
+    padding: 10px 0;
+    width:100%;
+  }
+  a{
+    text-decoration:none;
+    color:black;
+    padding:20px;
+    display:inline-block;
+  }
+  
+   */
+
+   /* Resetting default margin and padding */
+
+#intro{
+  width:1500px;
+    height:900px;
+    align-items:center;
+    padding:50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container styles */
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Navigation styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  /* Logo styles */
+  .logo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  /* Links styles */
+  .links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-size: 20px;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+    font-size:24px;
+    transition: smooth;
+  }
+
+  p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+  }
+
+  .categories{
+    list-style-type:none;
+    display:flex;
+  }
+  footer{
+    list-style-type:none;
+    display: flex;
+    justify-content: space-between;   
+  }
+  .footer a{
+    padding:10px;
+    color:blue;
+  }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .product-image {
+    width: 200px;
+    height: 200px;
+  }
+  .product-info {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .product-info h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+  .product-info p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+  }

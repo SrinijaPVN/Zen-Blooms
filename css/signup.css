@@ -1,0 +1,100 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.sign{
+    
+    border: 2px solid rgb(234, 52, 95);
+    border-color:rgb(228, 89, 117);
+    padding:30px;
+    align-items:center;
+    margin:auto;
+    margin-top:100px;
+    margin-bottom:100px;
+    max-width:400px;
+    box-shadow: 5px 5px 10px rgba(227, 160, 225, 0.988);
+    border-radius:10px;
+    font-size: 24px;;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px;
+    color: palevioletred;
+    margin-top:1px;
+  }
+
+  nav a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 24px;
+    color:rgb(235, 58, 143);
+  }
+  nav a:hover {
+    padding: 22px;
+    text-decoration: none;
+    font-size: 25px;
+    background-color:rgb(253, 144, 181);
+    transition: 0.5s;
+  }
+
+
+
+input[type=text],input[type=password] ,input[type=tel],input[type=email]{
+    padding: 13px;
+    display: inline-block;
+    width:100%;
+    border-radius:4px;
+    border-color: rgba(248, 111, 168, 0.999);
+    font-size:18px;
+    
+}
+
+input[type=text]:hover,input[type=password]:hover ,input[type=tel]:hover,input[type=email]:hover{
+    padding: 14px;
+    display: inline-block;
+    width:100%;
+    background-color: rgba(242, 0, 105, 0.305);
+    border-radius:4px;
+    transition: 0.5s;
+}
+label{
+    text-align:right;
+    width:30%;
+}
+button {
+    padding: 10px 50px;
+    display: block;
+    margin: auto;
+    background-color: rgba(255, 121, 157, 0.864);
+    font-size:20px;
+    border-color:pink;
+}
+button:hover {
+  padding: 12px 52px;
+  display: block;
+  margin: auto;
+  background-color: rgba(238, 74, 118, 0.864);
+  font-size:20px;
+  border-color:pink;
+  transition: 0.4s;
+}
+
+
+body{
+    background-image: url('/pics/background.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+img{
+opacity:0.5;
+ }
+
+ 
+
+ .raleway-heading {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Example weight value */
+    font-style: normal;
+  }

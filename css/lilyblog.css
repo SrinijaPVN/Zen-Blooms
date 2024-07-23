@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Style for the main section */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for each section */
+section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+/* Style for section headings */
+h2 {
+    color: #fe8fae; /* Change the color as needed */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style for section paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Change the color as needed */
+}
+
+
+footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; /* Decrease the padding */
+    color: palevioletred;
+    margin-top: 1px;
+    max-width: 100%;
+}
+
+nav a {
+    padding: 12px 16px; /* Decrease the padding */
+    text-decoration: none;
+    font-size: 20px; /* Decrease the font size */
+    color: rgb(235, 58, 143);
+}
+
+nav a:hover, .dropdown:hover .dropbtn {
+    padding: 12px 16px;; /* Decrease the padding */
+    text-decoration: none;
+    font-size: 20px; /* Decrease the font size */
+    background-color: rgb(239, 197, 211);
+    transition: 0.5s;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding:20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    padding:21px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    padding: 12px 16px;
+}
+
+.dropdown .dropbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: rgb(235, 58, 143);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+footer {
+    background-color: #f0f0f0;
+    padding: 10px; /* Decrease the padding */
+    text-align: center;
+    width: 100%;
+}
+
+.down {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.down li {
+    margin-left: 20px; /* Decrease the margin */
+    list-style: none;
+    font-size: 20px; /* Decrease the font size */
+    margin-right: 20px; /* Decrease the margin */
+    padding: 5px; /* Decrease the padding */
+}
+
+.down a {
+    text-decoration: none;
+    color: rgb(196, 40, 92);
+    font-weight: bold;
+}
+
+.down a:hover {
+    text-decoration: none;
+    background-color: rgb(239, 197, 211);
+    padding: 5px; /* Decrease the padding */
+    border-radius: 5px;
+    font-size: 22px; /* Increase the font size */
+    transition: 0.5s ease;
+}

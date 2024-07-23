@@ -1,0 +1,87 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px;
+  color: palevioletred;
+  margin-top:1px;
+}
+
+nav a {
+  padding: 20px;
+  text-decoration: none;
+  font-size: 24px;
+  color:rgb(235, 58, 143);
+}
+nav a:hover {
+  padding: 22px;
+  text-decoration: none;
+  font-size: 25px;
+  background-color:rgb(239, 197, 211);
+  transition: 0.5s;
+}
+.sign{
+    /* margin :100px auto; */
+  
+    border: 2px solid rgb(235, 16, 82);
+    border-color:rgb(244, 46, 109);
+    padding:30px;
+    align-items:center;
+    margin:auto;
+    margin-top:100px;
+    margin-bottom:100px;
+    max-width:400px;
+    box-shadow: 5px 5px 10px rgba(227, 160, 225, 0.988);
+    border-radius:10px;
+  }
+  
+  
+  
+  
+  input[type=password],input[type=email]{
+    padding: 10px;
+    /* display: inline-block; */
+    width:100%;
+  }
+  
+  
+  input[type=password]:hover ,input[type=email]:hover {
+    padding: 12px;
+    display: inline-block;
+    width:100%;
+    background-color: rgba(255, 210, 240, 0.486);
+  }
+  label{
+    text-align:right;
+    width:30%;
+  }
+  button {
+    padding: 10px 50px;
+    display: block;
+    margin: auto;
+    background-color: rgba(241, 64, 132, 0.166);
+  
+  }
+  body{
+    background-image: url('/pics/background.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+  }
+  img{
+  opacity:0.0;
+  }
+
+  button:hover {
+    padding: 12px 52px;
+    display: block;
+    margin: auto;
+    background-color: rgba(221, 9, 90, 0.578);
+  
+  }
+
+a{
+  text-decoration:none;
+  color: rgb(229, 33, 33);
+  text-align:center;
+}
+  
+  
