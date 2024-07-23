@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border-color: pink;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .quantity-input {
+      width: 50px;
+      text-align: center;
+    }
+    .checkout-btn {
+      padding: 10px 20px;
+      background-color: #ff5ea1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .checkout-btn:hover {
+      background-color: #ba044a;
+    }
+    nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; /* Decrease the padding */
+    color: palevioletred;
+    margin-top: 1px;
+    max-width: 100%;
+}
+
+nav a {
+    padding: 12px 16px; /* Decrease the padding */
+    text-decoration: none;
+    font-size: 20px; /* Decrease the font size */
+    color: rgb(235, 58, 143);
+}
+
+nav a:hover, .dropdown:hover .dropbtn {
+    padding: 12px 16px;; /* Decrease the padding */
+    text-decoration: none;
+    font-size: 20px; /* Decrease the font size */
+    background-color: rgb(239, 197, 211);
+    transition: 0.5s;
+}
+h1{
+  color: rgb(244, 47, 113);
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+       <a href="/index.html">Zen blooms</a>
+    </div>
+    
+    <div class="links">
+    <a href="/index.html">Home</a>
+   
+    <a href="/html/lillylane.html">Floral collection</a>
+    <a href="/html/faq.html">FAQ</a></li>
+    </div>
+  </nav>
+  <h1>Cart</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody id="cartItems">
+      <!-- Cart items will be dynamically added here -->
+    </tbody>
+  </table>
+  <div id="totalCost"></div>
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+  <script>
+    // Retrieve cart items from local storage or initialize an empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to display cart items
+    function displayCart() {
+      const cartItemsContainer = document.getElementById('cartItems');
+      const totalCostContainer = document.getElementById('totalCost');
+      cartItemsContainer.innerHTML = ''; // Clear previous items
+      totalCostContainer.innerHTML = ''; // Clear previous total cost
+
+      let totalCost = 0;
+
+      // Group items by title
+      const groupedItems = {};
+      cart.forEach(item => {
+        if (groupedItems[item.title]) {
+          groupedItems[item.title].quantity += item.quantity || 1;
+        } else {
+          groupedItems[item.title] = { ...item, quantity: item.quantity || 1 };
+        }
+      });
+
+      // Create rows for each unique item
+      Object.values(groupedItems).forEach(item => {
+        const row = document.createElement('tr');
+        const itemCell = document.createElement('td');
+        const priceCell = document.createElement('td');
+        const quantityCell = document.createElement('td');
+        const totalCell = document.createElement('td');
+        const removeCell = document.createElement('td');
+        const quantityInput = document.createElement('input');
+        const removeBtn = document.createElement('button');
+
+        itemCell.textContent = item.title;
+        priceCell.textContent = `₹${item.price.toFixed(2)}`;
+
+        quantityInput.type = 'number';
+        quantityInput.value = item.quantity;
+        quantityInput.min = 1;
+        quantityInput.classList.add('quantity-input');
+        quantityInput.addEventListener('change', () => {
+          updateCartItem(item, parseInt(quantityInput.value));
+        });
+
+        removeBtn.textContent = 'Remove';
+        removeBtn.addEventListener('click', () => {
+          removeCartItem(item);
+        });
+
+        totalCell.textContent = `₹${(item.price * item.quantity).toFixed(2)}`;
+
+        row.appendChild(itemCell);
+        row.appendChild(priceCell);
+        quantityCell.appendChild(quantityInput);
+        row.appendChild(quantityCell);
+        row.appendChild(totalCell);
+        removeCell.appendChild(removeBtn);
+        row.appendChild(removeCell);
+        cartItemsContainer.appendChild(row);
+
+        totalCost += item.price * item.quantity;
+      });
+
+      totalCostContainer.textContent = `Total Cost: ₹${totalCost.toFixed(2)}`;
+    }
+
+    // Function to update cart item quantity
+    function updateCartItem(item, quantity) {
+      const existingItem = cart.find(i => i.title === item.title);
+      if (existingItem) {
+        existingItem.quantity = quantity;
+      } else {
+        item.quantity = quantity;
+        cart.push(item);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+
+    // Function to remove cart item
+    function removeCartItem(item) {
+      const updatedCart = cart.filter(cartItem => cartItem.title !== item.title);
+      cart = updatedCart;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+
+    // Call displayCart to render initial cart items
+    displayCart();
+
+    // Function to handle checkout button click
+    function checkout() {
+      // Add your checkout logic here
+      window.location.href = '/html/payment.html';
+    }
+  </script>
+</body>
+</html>

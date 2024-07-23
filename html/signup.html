@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Sign up Form </title>
+        <link rel="stylesheet" href="/css/signup.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+
+        <script>
+            function Signup() {
+                var firstName = document.getElementById("fname").value;
+                var lastname=document.getElementById("lname").value;
+                var phoneNumber = document.getElementById("pno").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("cpword").value;
+    
+                if (firstName.trim() === "") {
+                    alert("Please enter your first name.");
+                    return false;
+                }
+                if (lastname.trim() === "") {
+                    alert("Please enter your last name.");
+                    return false;
+                }
+    
+                if (phoneNumber.trim() === "") {
+                    alert("Please enter your phone number.");
+                    return false;
+                }
+                if (email.trim() === "") {
+                    alert("Please enter your correct email.");
+                    return false;
+                }
+    
+                if (password.trim() === "") {
+                    alert("Please enter a password.");
+                    return false;
+                }
+    
+                if (confirmPassword.trim() === "") {
+                    alert("Please confirm your password.");
+                    return false;
+                }
+    
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                
+                alert("successfully registered!");
+                return true;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+               <a href="../index.html">Zen blooms</a>
+            </div>
+            <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="/html/signup.html">SignUp</a>
+            <a href="/html/login.html">Login </a>
+            <a href="/html/faq.html">FAQ</a>
+            </div>
+        </nav>
+        <form onsubmit="return Signup()">
+            <div class="sign">
+            <h1>Register here</h1>
+            <!-- <label>First Name</label> -->
+            <input type="text" placeholder="First Name" id="fname" pattern="[A-Z][a-z]{5,30}" title="First name should begin with a Capital letter and contain atleast 5 letters">
+            <Br><br>
+            <!-- <label>Last  Name</label> -->
+            <input type="text" placeholder="Last name" id="lname"pattern="[a-zA-Z]{2,30}" title="Last name should contain more than 2 letters">
+            <br><br>
+                <!-- <label>Phone number</label> -->
+                <input type="tel" placeholder="Phone No." id="pno" required pattern="^\+91[6789]\d{9}$" title="please enter a valid phone number">
+                <br><br>
+            <!-- <label>email</label> -->
+            <input type="email" placeholder="Enter Email " id="email">
+            <br><br>
+            <!-- <label>Password</label> -->
+            <input type="password" placeholder="enter password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number">
+            <br><br>
+            <!-- <label>Confirm password</label> -->
+            <input type="password" placeholder="confirm password" id="cpword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number">
+            <br><br>
+             <button type="submit">Register </button> 
+            </div>
+        </form>
+    </body>
+</html>

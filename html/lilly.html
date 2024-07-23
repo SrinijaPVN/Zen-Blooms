@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilies</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .checkout-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lilies</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Lily products will be added dynamically -->
+            <tr>
+                <td>Pink Asiatic Lily</td>
+                <td><img src="/pics/pinkasiaticlily.jpeg" alt="Pink Asiatic Lily" width="50"></td>
+                <td>
+                    <button onclick="decreaseQuantity('Pink Asiatic Lily')">-</button> 1
+                    <button onclick="increaseQuantity('Pink Asiatic Lily')">+</button>
+                </td>
+                <td>$10</td>
+                <td><button onclick="removeFromCart('Pink Asiatic Lily')">Remove</button></td>
+            </tr>
+            <!-- Add more Lily products here as needed -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total:</td>
+                <td id="total-cost">10.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="checkout-btn-container">
+        <a href="/html/payment.html" id="checkout-link">
+            <button>Checkout</button>
+        </a>
+    </div>
+
+    <script>
+        // JavaScript code for the cart functionality (same as in cart.html)
+        // You can copy and paste the JavaScript code from cart.html here
+    </script>
+</body>
+</html>
